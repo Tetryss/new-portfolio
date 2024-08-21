@@ -10,12 +10,26 @@ type proj = {
 };
 export default function Page() {
   const [projects, setProjects] = useState<proj[]>([]);
+  const [isMobile, setIsMobile] = useState(false);
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.matchMedia("(max-width: 600px)").matches);
+    };
 
+    // Initial check
+    handleResize();
+
+    // Add event listener for window resize
+    window.addEventListener("resize", handleResize);
+
+    // Cleanup event listener on component unmount
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
   useEffect(() => {
     setProjects(projectsData);
   }, []);
-
-  const isMobile = window.matchMedia("(max-width: 600px)").matches; //Checks if the client is mobile device
 
   function clickHandler(e: React.MouseEvent<HTMLDivElement>) {
     const elems = document.querySelectorAll(".selected-active");
