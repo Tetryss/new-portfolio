@@ -36,17 +36,22 @@ export default function Home() {
               key={index}
             >
               {/* TOPIC HERE */}
-              <h2 className="text-4xl p-1 group-hover:text-transparent bg-gradient-to-r from-orange-500 to-fuchsia-700 bg-clip-text transition-all duration-500">
+              <h2
+                key={item.Topic}
+                className="text-4xl p-1 group-hover:text-transparent bg-gradient-to-r from-orange-500 to-fuchsia-700 bg-clip-text transition-all duration-500"
+              >
                 {item.Topic}
               </h2>
               <hr className="rounded-lg h-1 border-transparent bg-gradient-to-r to-fuchsia-800 from-orange-500 w-1 group-hover:w-[16.5rem] transition-all duration-500" />
               {/* ENTRIES */}
               <div className="flex h-auto w-full flex-col">
                 {item.Entries.map((item, index) => (
-                  <div key={index} className="">
+                  <div key={item.Title} className="">
                     <h3 className="font-semibold text-[0rem] group-hover:text-base transition-all duration-500 opacity-40 hover:opacity-100 ease-out">
                       {item.Title} -{" "}
-                      <span className="text-orange-500">{item.Date}</span>
+                      <span key={item.Date} className="text-orange-500">
+                        {item.Date}
+                      </span>
                     </h3>
                   </div>
                 ))}
