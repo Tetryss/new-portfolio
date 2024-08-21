@@ -77,6 +77,7 @@ export default function Page() {
               );
               return (
                 <div
+                  key={index}
                   onClick={scaleOnClick}
                   style={{ backgroundColor: backgroundColor }}
                   className="overflow-hidden px-1 font-bold font-mono w-32 h-28 rounded-lg shadow-xl transition-all duration-300"

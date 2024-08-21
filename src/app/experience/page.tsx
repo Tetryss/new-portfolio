@@ -43,7 +43,7 @@ export default function Home() {
               {/* ENTRIES */}
               <div className="flex h-auto w-full flex-col">
                 {item.Entries.map((item, index) => (
-                  <div className="">
+                  <div key={index} className="">
                     <h3 className="font-semibold text-[0rem] group-hover:text-base transition-all duration-500 opacity-40 hover:opacity-100 ease-out">
                       {item.Title} -{" "}
                       <span className="text-orange-500">{item.Date}</span>
