@@ -1,0 +1,57 @@
+[
+    {
+       "Topic": "University",
+       "Entries": [
+          {"Title": "University of Minnesota", "Date": "Fall 2023"},
+          {"Title": "[CSCI2041] Adv. Programming Principles", "Date": "Fall 21"},
+          {"Title": "[CSCI2021] Machine Architecture and Organization ", "Date": "Fall 21"},
+          {"Title": "[CSCI2033] Elem Comput Linear Algebra", "Date": "Fall 21"},
+          {"Title": "[CSCI3081] Program Design & Development", "Date": "Fall 22"},
+          {"Title": "[CSCI4041] Algorithm & Data Structure ", "Date": "Spring 23"},
+          {"Title": "[CSCI4061] Intro to Operating Systems", "Date": "Spring 23"},
+          {"Title": "[CSCI5801] Software Engineering I", "Date": "Spring 23"},
+          {"Title": "[CSCI4131] Internet Programming", "Date": "Fall 23"},
+          {"Title": "[CSCI4611] Programming Graphics and Games", "Date": "Fall 23"}
+       ]
+    },
+    {
+       "Topic": "Coding",
+       "Entries": [
+          {"Title": "VSCode", "Date": "5yrs"},
+          {"Title": "Debugging", "Date": "5yrs"},
+          {"Title": "Git & GitHub", "Date": "5yrs"},
+          {"Title": "Python", "Date": "3yrs"},
+          {"Title": "JavaScript & TypeScript", "Date": "2yrs"},
+          {"Title": "Unit Testing", "Date": "1yr"},
+          {"Title": "Java", "Date": "1yr"},
+          {"Title": "IntelliJ", "Date": "1yr"},
+          {"Title": "C", "Date": "1yr"},
+          {"Title": "C++", "Date": "1yr"},
+          {"Title": "Agile Scrum", "Date": "1yr"},
+          {"Title": "Docker & DockerHub", "Date": "0.5yr"},
+          {"Title": "OCaml", "Date": "0.5yr"},
+          {"Title": "GDScript", "Date": "0.5yr"}
+       ]
+    },
+    {
+       "Topic": "Graphics",
+       "Entries": [
+          {"Title": "Paint.net", "Date": "5yrs"},
+          {"Title": "AffinityPhoto", "Date": "3yrs"},
+          {"Title": "ProCreate", "Date": "2yrs"},
+          {"Title": "Figma", "Date": "0.5yr"},
+          {"Title": "Blender", "Date": "0.25yr"}
+          
+       ]
+    },
+    {
+       "Topic": "Contact Info",
+       "Entries": [
+          {"Title": "Phone", "Date": "(###)###-8483"},
+          {"Title": "Email", "Date": "jachumbre01@gmail.com"},
+          {"Title": "Github", "Date": "github.com/Tetryss"},
+          {"Title": "LinkedIn", "Date": "linkedin.com/in/jan-achumbre-8bb611296/"}
+       ]
+    }
+ ]
+ 

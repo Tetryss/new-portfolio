@@ -1,0 +1,68 @@
+[
+    {
+        "image": "https://i.imgur.com/6Zoaagd.png",
+        "description": "After learning React in-depth, this was my attempt to apply the knowledge I had learned. This project is supposed to mimic Pokemon cards with a different aesthetic twist. Users are able to add Pokemon cards by simply typing their names and pressing add or enter. Depending on the Pokemon's type, the card background changes color. If a Pokemon has two types, it will gradient into those two colors. If the Pokemon only has one, then it will gradient into a different hue. The information is fetched from PokeAPI.",
+        "title": "Pokemon Cards",
+        "link": "https://tetryss.github.io/pokemon-cards/"
+    },
+    {
+        "image": "https://i.imgur.com/qNwIk1e.png",
+        "description": "As its name suggests, this project involves raining text! Users are able to turn their cameras on and interact with the falling text. When a text character collides with the user, the text will be stuck in place and change into a random color. This is done through React + TypeScript and GopherGFX (ThreeJS wrapper).",
+        "title": "Text Rain",
+        "link": "https://csci-4611-fall-2023.github.io/assignment-1-Tetryss/"
+    },
+    {
+        "image": "https://i.imgur.com/0rn1qr4.png",
+        "description": "This is another project made with GopherGFX (ThreeJS Wrapper) that displays all of the earthquakes that have occurred (up to 2006) as spheres on the map. The magnitude of the earthquake corresponds with the sphere's hue. The map also has 2 modes: map and globe. All of the transitions are achieved with linear interpolation.",
+        "title": "Earthquake Viewer",
+        "link": "https://csci-4611-fall-2023.github.io/assignment-3-Tetryss/"
+    },
+    {
+        "image": "https://i.imgur.com/OkoHGeb.png",
+        "description": "Another college project made with GopherGFX. This project went into matrix transformations in 3D space as well as linear interpolation of motion captured animations.",
+        "title": "Ants Can Dance",
+        "link": "https://csci-4611-fall-2023.github.io/assignment-4-Tetryss/"
+    },
+    {
+        "image": "https://i.imgur.com/ErTql5e.png",
+        "description": "This is one of my notable college projects. As the name suggests, this is a twist of the original Harold project which allowed users to turn 2D drawing inputs into 3D! The twist here is that there is very little to no User Interface (except for changing colors and adjusting the brush). This is to create a very seamless and immersive user experience. Users are also able to move around using WASD on their keyboards.",
+        "title": "Harold",
+        "link": "https://csci-4611-fall-2023.github.io/assignment-6-Tetryss/"
+    },
+    {
+        "image": "https://i.imgur.com/i2ISgNs.png",
+        "description": "A project made in college going into Graphics Card Programming with fragment and vertex shaders. The shaders implemented are: Gouraud, Phong, Normal, and Toon + Outline (Cel-shading). This project is also implemented using GopherGFX(ThreeJS Wrapper).",
+        "title": "Shaders",
+        "link": "https://csci-4611-fall-2023.github.io/assignment-5-Tetryss/"
+    },
+    {
+        "image": "https://i.imgur.com/PYNaiJ1.png",
+        "description": "This is a project made with Vanilla JavaScript + ExpressJS + MySQL for the backend. The frontend is composed of HTML/PUG templating and CSS. This project mimics microblogging websites which allows for posting, post editing, liking (and retaining its like count through the database), post deletion, account creation (with user authentication), as well as page pagination for posts.",
+        "title": "Microblogging Site",
+        "link": ""
+    },
+    {
+        "image": "https://i.imgur.com/ZkdCYEh.png",
+        "description": "This was a project I worked on during my software engineering class, built with C++ and Makefile to build the dependencies and run the program. The project was built with 3 other people and its purpose is to tally votes for Closed Party Listing, Instant Runoff voting, and Popularity voting. While the project was mostly about parsing through text files, this also taught me a lot about data organizing and analyzing. This project also included a lot of Software Design Documentation as well as Software Requirement Specification. As for the workflow, it strictly followed the agile scrum principles.",
+        "title": "Vote Tallying For Election",
+        "link": "https://github.umn.edu/umn-csci-5801-01-S23/repo-Team4/tree/main/Project2"
+    },
+    {
+        "image": "",
+        "description": "This was a group project that I worked on with 4 other people during college. Ths premise of the project was to create a drone simulation where a drone would pick up a robot and deliver it to a certain destination. However, my group did something else and turned it into a cat and mouse game. The project was done mostly in C++ with HTML. This semi-followed the agile scrum workflow with minimal documentation. This also made use of multiple design patterns such as observer and factory.",
+        "title": "Drone Simulation",
+        "link": ""
+    },
+    {
+        "image": "https://i.imgur.com/0vD7EX9.png",
+        "description": "This was my first attempt at creating a portfolio for my projects. While still up and functional, I decided to create a new one in order to better showcase my current capabilities with frontend technologies and approach. This project was created with ReactJS and Vite for the framework.",
+        "title": "Old Portfolio",
+        "link": "https://tetryss.github.io/personal-portfolio/"
+    },
+    {
+        "image": "https://i.imgur.com/fCF0DaX.png",
+        "description": "Built with NextJS and Pocketbase as the database",
+        "title": "Lost and Found",
+        "link": ""
+    }
+]

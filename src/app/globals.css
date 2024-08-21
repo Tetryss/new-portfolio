@@ -1,6 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import url("https://fonts.googleapis.com/css2?family=Varela+Round&display=swap");
 
 :root {
   --foreground-rgb: 0, 0, 0;
@@ -11,23 +12,68 @@
 @media (prefers-color-scheme: dark) {
   :root {
     --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+    --background-start-rgb: 17, 24, 39;
+    --background-end-rgb: 17, 24, 39;
   }
 }
 
 body {
+  overflow: hidden;
   color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  background: #0c1014;
 }
 
 @layer utilities {
   .text-balance {
     text-wrap: balance;
   }
+}
+
+.varela-round-regular {
+  font-family: "Varela Round", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+/* CLASS LISTS */
+
+.selected-active {
+  width: 65% !important;
+  height: 80% !important;
+  transform: translateX(calc(100vw - 85rem)) !important;
+  writing-mode: initial !important;
+  background-color: white !important;
+  color: black !important;
+}
+
+.selected-active p {
+  visibility: visible;
+}
+.selected-active a {
+  visibility: visible;
+}
+.selected-active img {
+  display: block;
+}
+
+.selected-active h1 {
+  font-size: 4rem;
+  left: 1rem !important;
+  display: block;
+}
+
+.selected-active:hover {
+  margin-left: 0 !important;
+  cursor: default !important;
+}
+
+.scaled-up {
+  scale: 1;
+}
+
+.mobile-show {
+  font-size: 0.6em;
+}
+.mobile-show img {
+  opacity: 1 !important;
 }
