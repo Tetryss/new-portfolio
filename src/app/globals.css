@@ -40,7 +40,7 @@ body {
 .selected-active {
   width: 65% !important;
   height: 80% !important;
-  transform: translateX(calc(100vw - 85rem)) !important;
+  transform: translateX(calc(100vw - 115%)) !important;
   writing-mode: initial !important;
   background-color: white !important;
   color: black !important;
