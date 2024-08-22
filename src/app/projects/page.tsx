@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import projectsData from "./projects.json";
 
 type proj = {
@@ -11,6 +11,9 @@ type proj = {
 export default function Page() {
   const [projects, setProjects] = useState<proj[]>([]);
   const [isMobile, setIsMobile] = useState(false);
+  const circle = useRef<HTMLDivElement>(null);
+  const radius = 140;
+
   useEffect(() => {
     const handleResize = () => {
       setIsMobile(window.matchMedia("(max-width: 600px)").matches);
@@ -27,61 +30,28 @@ export default function Page() {
       window.removeEventListener("resize", handleResize);
     };
   }, []);
+
+  // Ensuring data is set
   useEffect(() => {
     setProjects(projectsData);
   }, []);
 
-  function clickHandler(e: React.MouseEvent<HTMLDivElement>) {
-    const elems = document.querySelectorAll(".selected-active");
-    elems.forEach((elem) => {
-      const temp = elem as HTMLDivElement;
-      temp.classList.toggle("selected-active");
-    });
-    e.stopPropagation(); //SEE IF THIS BREAKS STUFF (it literally does not stop bubbling gg)
-    const target = e.target as HTMLDivElement;
-    target.classList.toggle("selected-active");
-  }
-
-  function scaleOnClick(e: React.MouseEvent<HTMLDivElement>) {
-    const target = e.currentTarget as HTMLDivElement;
-    target.classList.toggle("mobile-show");
-    const rect = target.getBoundingClientRect();
-    const centerX = (window.innerWidth - rect.width) / 2 - rect.left;
-    const centerY = (window.innerHeight - rect.height + 460) / 2 - rect.top;
-
-    target.style.transform = `translate(${centerX}px, ${
-      centerY + 5
-    }px) scale(3)`;
-
-    // remove the styles when clicking outside
-    const handleClickOutside = (event: MouseEvent) => {
-      if (!target.contains(event.target as Node)) {
-        target.style.transform = ""; // reset the transform
-        target.classList.toggle("mobile-show");
-        document.removeEventListener("click", handleClickOutside);
-      }
-    };
-
-    document.addEventListener("click", handleClickOutside);
-  }
-
-  // Function to interpolate between two colors
-  function interpolateColor(
-    color1: [number, number, number],
-    color2: [number, number, number],
-    factor: number
-  ) {
-    const result = color1.map((c, i) => {
-      return Math.round(c + (color2[i] - c) * factor);
-    });
-    return `rgb(${result[0]}, ${result[1]}, ${result[2]})`;
-  }
+  // Ensuring Circle reference is set
+  useEffect(() => {
+    if (isMobile && circle) {
+      console.log("Circle is set!");
+      setProjects((prevProjects) => [...prevProjects]); // Needed to re-render
+    }
+  }, [isMobile, circle.current]);
 
   return (
     <>
       <div>
         {isMobile ? (
-          <div className="absolute top-[4rem] h-[50vh] w-screen flex flex-wrap justify-center items-center gap-1">
+          <div
+            ref={circle}
+            className=" relative top-[5rem] h-[20rem] w-[20rem] mx-auto"
+          >
             {projects.map((data, index) => {
               const factor = index / (projects.length - 1);
               const backgroundColor = interpolateColor(
@@ -89,19 +59,41 @@ export default function Page() {
                 [249, 115, 22],
                 factor
               );
+              let xi = 0;
+              let yi = 0;
+
+              if (circle.current) {
+                const rect = circle.current.getBoundingClientRect();
+                const centerX = rect.width / 2.5;
+                const centerY = rect.height / 2.5;
+                const angle = (2 * Math.PI * index) / projects.length;
+
+                // Position calculations for circle
+                xi = centerX + radius * Math.cos(angle);
+                yi = centerY + radius * Math.sin(angle);
+              }
+
               return (
                 <div
+                  onClick={presentClick}
                   key={index}
-                  onClick={scaleOnClick}
-                  style={{ backgroundColor: backgroundColor }}
-                  className="overflow-hidden px-1 font-bold font-mono w-32 h-28 rounded-lg shadow-xl transition-all duration-300"
+                  style={{
+                    backgroundColor: backgroundColor,
+                    transform: `translate(${xi}px, ${yi}px)`,
+                  }}
+                  className="overflow-hidden absolute w-16 h-16 rounded-full hover:ring-2 ring-white animate-pulse"
                 >
-                  {data.title}
                   <img
                     className="opacity-0 rounded-lg"
                     src={data.image}
                     alt="Project Image"
                   />
+                  <p
+                    key={data.title}
+                    className="opacity-0 text-center text-2xl drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.8)] font-mono"
+                  >
+                    {data.title}
+                  </p>
                 </div>
               );
             })}
@@ -168,4 +160,41 @@ export default function Page() {
       </div>
     </>
   );
+}
+function presentClick(e: React.MouseEvent<HTMLDivElement>) {
+  const target = e.currentTarget as HTMLDivElement;
+
+  // Toggle the 'mobile-show' class on all other elements
+  const elems = document.querySelectorAll<HTMLDivElement>(".mobile-show");
+  elems.forEach((elem) => {
+    if (elem !== target) {
+      elem.classList.remove("mobile-show");
+    }
+  });
+
+  // Toggle the class on the clicked element
+  target.classList.toggle("mobile-show");
+}
+
+function clickHandler(e: React.MouseEvent<HTMLDivElement>) {
+  const elems = document.querySelectorAll(".selected-active");
+  elems.forEach((elem) => {
+    const temp = elem as HTMLDivElement;
+    temp.classList.toggle("selected-active");
+  });
+  e.stopPropagation(); //SEE IF THIS BREAKS STUFF (it literally does not stop bubbling gg)
+  const target = e.target as HTMLDivElement;
+  target.classList.toggle("selected-active");
+}
+
+// Function to interpolate between two colors
+function interpolateColor(
+  color1: [number, number, number],
+  color2: [number, number, number],
+  factor: number
+) {
+  const result = color1.map((c, i) => {
+    return Math.round(c + (color2[i] - c) * factor);
+  });
+  return `rgb(${result[0]}, ${result[1]}, ${result[2]})`;
 }
