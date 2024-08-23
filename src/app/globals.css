@@ -75,7 +75,7 @@ body {
 .mobile-show {
   animation: none !important;
   width: 90vw !important;
-  height: 25vh !important;
+  height: 35vh !important;
   border-radius: 1rem !important;
   font-size: 0.6em;
   transform: translate(-2rem, 25rem) !important;
