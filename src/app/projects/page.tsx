@@ -182,7 +182,7 @@ function clickHandler(e: React.MouseEvent<HTMLDivElement>) {
     const temp = elem as HTMLDivElement;
     temp.classList.toggle("selected-active");
   });
-  e.stopPropagation(); //SEE IF THIS BREAKS STUFF (it literally does not stop bubbling gg)
+  e.stopPropagation(); //SEE IF THIS BREAKS STUFF (TEST MERGE ERROR)
   const target = e.target as HTMLDivElement;
   target.classList.toggle("selected-active");
 }
