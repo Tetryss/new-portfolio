@@ -85,7 +85,10 @@ body {
     height: 35vh !important;
     border-radius: 1rem !important;
     font-size: 0.6em;
-    transform: translate(-2rem, 25rem) !important;
+    position: absolute;
+    top: 110%;
+    right: -0.1rem;
+    transform: none !important;
 }
 .mobile-show img {
     opacity: 1 !important;
