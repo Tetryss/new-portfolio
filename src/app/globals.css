@@ -4,85 +4,92 @@
 @import url("https://fonts.googleapis.com/css2?family=Varela+Round&display=swap");
 
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+    --foreground-rgb: 0, 0, 0;
+    --background-start-rgb: 214, 219, 220;
+    --background-end-rgb: 255, 255, 255;
 }
 
 @media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 17, 24, 39;
-    --background-end-rgb: 17, 24, 39;
-  }
+    :root {
+        --foreground-rgb: 255, 255, 255;
+        --background-start-rgb: 17, 24, 39;
+        --background-end-rgb: 17, 24, 39;
+    }
+}
+@media (prefers-color-scheme: light) {
+    :root {
+        --foreground-rgb: 255, 255, 255;
+        --background-start-rgb: 17, 24, 39;
+        --background-end-rgb: 17, 24, 39;
+    }
 }
 
 body {
-  overflow: hidden;
-  color: rgb(var(--foreground-rgb));
-  background: #0c1014;
+    overflow: hidden;
+    color: rgb(var(--foreground-rgb));
+    background: #0c1014;
 }
 
 @layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+    .text-balance {
+        text-wrap: balance;
+    }
 }
 
 .varela-round-regular {
-  font-family: "Varela Round", sans-serif;
-  font-weight: 400;
-  font-style: normal;
+    font-family: "Varela Round", sans-serif;
+    font-weight: 400;
+    font-style: normal;
 }
 
 /* CLASS LISTS */
 
 .selected-active {
-  width: 65% !important;
-  height: 80% !important;
-  transform: translateX(calc(100vw - 115%)) !important;
-  writing-mode: initial !important;
-  background-color: white !important;
-  color: black !important;
+    width: 65% !important;
+    height: 80% !important;
+    transform: translateX(calc(100vw - 115%)) !important;
+    writing-mode: initial !important;
+    background-color: white !important;
+    color: black !important;
 }
 
 .selected-active p {
-  visibility: visible;
+    visibility: visible;
 }
 .selected-active a {
-  visibility: visible;
+    visibility: visible;
 }
 .selected-active img {
-  display: block;
+    display: block;
 }
 
 .selected-active h1 {
-  font-size: 4rem;
-  left: 1rem !important;
-  display: block;
+    font-size: 4rem;
+    left: 1rem !important;
+    display: block;
 }
 
 .selected-active:hover {
-  margin-left: 0 !important;
-  cursor: default !important;
+    margin-left: 0 !important;
+    cursor: default !important;
 }
 
 .scaled-up {
-  scale: 1;
+    scale: 1;
 }
 
 /* MOBILE STUFF ONLY */
 .mobile-show {
-  animation: none !important;
-  width: 90vw !important;
-  height: 35vh !important;
-  border-radius: 1rem !important;
-  font-size: 0.6em;
-  transform: translate(-2rem, 25rem) !important;
+    animation: none !important;
+    width: 90vw !important;
+    height: 35vh !important;
+    border-radius: 1rem !important;
+    font-size: 0.6em;
+    transform: translate(-2rem, 25rem) !important;
 }
 .mobile-show img {
-  opacity: 1 !important;
+    opacity: 1 !important;
 }
 .mobile-show p {
-  opacity: 1 !important;
+    opacity: 1 !important;
 }
